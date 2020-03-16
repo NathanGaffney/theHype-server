@@ -19,6 +19,12 @@ app.use(express.json());
 //middleware
 app.use(require('./middleware/headers'));
 
+app.all('/', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+})
+
 //routes
 app.use('/user', user);
 //------------------------------------------------
