@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+var cors = require('cors');
 const app = express();
 
 //controller imports
@@ -11,6 +12,8 @@ const sequelize = require('./db');
 sequelize.sync();
 //force: true vvvvvv for resetting tables in database
 // sequelize.sync({force: true});
+app.use(cors());
+
 app.use(express.json());
 
 //middleware
