@@ -2,8 +2,9 @@ const router = require('express').Router();
 const User = require('../db').import('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+var cors = require('cors')
 
-router.post('/signup', (req, res) => {
+router.post('/signup', cors(), (req, res) => {
     User.create({
         username: req.body.username,
         password: bcrypt.hashSync(req.body.password, 10)
@@ -24,7 +25,7 @@ router.post('/signup', (req, res) => {
     )
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', cors(), (req, res) => {
     User.findOne({
         where: {
             username: req.body.username
