@@ -9,9 +9,9 @@ const game = require('./controllers/gamecontroller');
 
 //db import and sync
 const sequelize = require('./db');
-sequelize.sync();
+// sequelize.sync();
 //force: true vvvvvv for resetting tables in database
-// sequelize.sync({force: true});
+sequelize.sync({force: true});
 app.use(cors());
 
 app.use(express.json());
