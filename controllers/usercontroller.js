@@ -18,7 +18,7 @@ router.post('/signup', cors(), (req, res) => {
             })
             res.json({
                 user: user,
-                message: 'user created',
+                message: 'User Created',
                 sessionToken: token
             })
         }, createError = err => res.send(500, err)
@@ -42,17 +42,17 @@ router.post('/login', cors(), (req, res) => {
                     })
                     res.json({
                         user: user,
-                        message: 'user seccessfully logged in',
+                        message: 'User Seccessfully Logged In',
                         sessionToken: token
                     })
                 } else {
-                    res.status(502).send({error: 'bad gateway'})
+                    res.status(502).send({error: 'Bad Gateway'})
                 }
             })
         } else {
-            res.status(500).send({error: 'failed to authenticate'})
+            res.status(500).send({error: 'Failed To Authenticate'})
         }
-    }, err => res.status(501).send({error: 'failed to process'}))
+    }, err => res.status(501).send({error: 'Failed To Process'}))
 })
 
 module.exports = router;

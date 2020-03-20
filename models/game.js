@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         hypeRating: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         description: {
@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         username: {
             type: DataTypes.STRING
+        },
+        url: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     })
     return game;

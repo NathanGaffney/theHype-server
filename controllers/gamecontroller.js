@@ -11,7 +11,8 @@ router.post('/create', validateSession, (req, res) => {
         releaseDate: req.body.releaseDate,
         platform: req.body.platform,
         userId: req.user.id,
-        username: req.user.username
+        username: req.user.username,
+        url: req.body.url
     }
 
     console.log(req);
